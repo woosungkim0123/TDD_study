@@ -26,6 +26,12 @@ describe("Calculator", () => {
     expect(cal.value).toBe(10);
   });
 
+  it("adds should throw an error", () => {
+    expect(() => {
+      cal.add(101); // 콜백함수 안에 에러가 예상되는 코드
+    }).toThrow("Value can not be greater than 100");
+  });
+
   it("subtract", () => {
     cal.set(9);
     cal.subtract(1);
